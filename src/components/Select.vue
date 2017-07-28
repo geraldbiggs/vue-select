@@ -640,6 +640,7 @@
           })
           var index = this.mutableValue.indexOf(ref)
           this.mutableValue.splice(index, 1)
+          this.$emit('deselect',[ref.value, index])
         } else {
           this.mutableValue = null
         }
@@ -806,7 +807,7 @@
        */
       clearSearchOnBlur() {
         return this.clearSearchOnSelect && !this.multiple
-      },  
+      },
 
       /**
        * Return the current state of the
